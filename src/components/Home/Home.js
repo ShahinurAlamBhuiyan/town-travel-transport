@@ -8,7 +8,7 @@ const Home = () => {
         <div className='home'>
             <Header/>
 
-            <h3>This is home components</h3>
+            <h3 style={{color:'white'}}>This is home components</h3>
         </div>
     );
 };
