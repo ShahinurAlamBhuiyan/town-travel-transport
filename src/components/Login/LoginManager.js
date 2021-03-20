@@ -13,21 +13,15 @@ export const initializeLoginFrameWork = () => {
 export const handleGoogleSignIn = () => {
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     return firebase.auth().signInWithPopup(googleProvider)
-        .then(res => {
-            const { displayName, email, photoURL } = res.user;
-            const signedInUser = {
-                isSignedIn: true,
-                name: displayName,
-                email: email,
-                photo: photoURL,
-                success: true
-            }
-            return signedInUser;
-        })
-        .catch(err => {
-            console.log(err);
-            console.log(err.message)
-        })
+    .then((result) => {
+        var user = result.user;
+        user.success = true;
+        return user;
+    })
+    .catch((error) => {
+        var errorMessage = error.message;
+        console.log(errorMessage)
+    });
 }
 
 
