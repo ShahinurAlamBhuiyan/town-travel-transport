@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import Header from '../Header/Header';
 import GoogleMap from '../GoogleMap/GoogleMap';
 const Destination = () => {
-    const [location, setLocation] = useState({ from: null, to: null })
-
     const handleSubmit =(e) => {
         e.preventDefault()
     }
