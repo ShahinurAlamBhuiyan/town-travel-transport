@@ -3,10 +3,6 @@ import Header from '../Header/Header';
 import GoogleMap from '../GoogleMap/GoogleMap';
 const Destination = () => {
     const [location, setLocation] = useState({ from: null, to: null })
-    const onBlurHandler = (e) => {
-        const key = e.target.name
-        setLocation({ ...location, [key]: e.target.value })
-    }
 
     const handleSubmit =(e) => {
         e.preventDefault()
