@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
+import SingleCard from '../SingleCard/SingleCard';
 import './Home.css'
+import fakeData from '../FakeData/FakeData.json'
 
 const Home = () => {
-    
+    const [cards, setCards] = useState([])
+    useEffect(() => {
+        setCards(fakeData)
+    }, [])
     return (
         <div className='home'>
-            <Header/>
-
-            <h3 style={{color:'white'}}>This is home components</h3>
+            <Header />
+            <div className='pt-5 mt-5  d-flex justify-content-center flex-wrap'>
+                {
+                    cards.map(card => <SingleCard card={card}></SingleCard>)
+                }
+            </div>
         </div>
     );
 };
