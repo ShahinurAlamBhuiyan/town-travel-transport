@@ -1,9 +1,12 @@
 import React from 'react';
 
 const Contact = () => {
+    const style = { 
+        backgroundImage:"url('../../images/back4.jpeg')"
+    }
     return (
-        <div>
-            <h2>Who are you?</h2>
+        <div style={style}>
+            <h2 className='pt-5 text-center'>Developer will fixed it .</h2>
         </div>
     );
 };

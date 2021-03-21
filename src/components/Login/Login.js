@@ -103,7 +103,7 @@ function Login() {
         <>
             <div className='pt-5' >
                 <div className='  d-flex justify-content-center align-items-center flex-column'>
-                    <div className='text-center' style={{ boxShadow: "5px 5px 15px  gray", borderRadius: '10px', padding: '75px' }}>
+                    <div className='text-center' style={{ boxShadow: "5px 5px 5px  gray", borderRadius: '10px', padding: '75px' , backgroundColor:'white'}}>
                         {
                             newUser ?
                                 <h3 style={{ fontWeight: '700' }}>Create an account</h3>
@@ -135,14 +135,14 @@ function Login() {
                 <div className='container d-flex justify-content-center align-items-center flex-column flex-wrap'>
 
                     <div className='d-flex justify-content-between align-items-center w-50 p-3'
-                        style={{ border: '1px solid black', borderRadius: '40px', cursor: 'pointer' }}
+                        style={{ border: '1px solid black', borderRadius: '40px', cursor: 'pointer', backgroundColor:'white' }}
                         onClick={fbSignIn}>
 
                         <img style={{ width: '50px' }} src={fbIcon} alt="" />
                         <p> <strong>Sign in with facebook</strong> </p>
                     </div>
                     <div className='d-flex justify-content-between align-items-center w-50 p-3 mt-4'
-                        style={{ border: '1px solid black', borderRadius: '40px', cursor: 'pointer' }}
+                        style={{ border: '1px solid black', borderRadius: '40px', cursor: 'pointer' , backgroundColor:'white'}}
                         onClick={googleSignIn}>
                         <img style={{ width: '50px' }} src={googleIcon} alt="" />
                         <p> <strong>Sign in with google</strong> </p>

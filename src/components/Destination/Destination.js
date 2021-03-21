@@ -1,7 +1,6 @@
 import React from 'react';
 import DestinationForm from '../DestinationForm/DestinationForm';
 import GoogleMap from '../GoogleMap/GoogleMap';
-import { Button } from '@material-ui/core';
 
 const Destination = () => {
     return (

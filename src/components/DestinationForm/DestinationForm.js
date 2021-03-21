@@ -56,7 +56,7 @@ const DestinationForm = () => {
                     <div className="mb-3">
                         <input type="time" className="form-control" required />
                     </div>
-                    <input className='btn btn-primary w-100' type="submit" value='Search' />
+                    <input className='btn btn-danger w-100' type="submit" value='Search' />
                 </form>
 
             }

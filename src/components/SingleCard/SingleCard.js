@@ -13,7 +13,7 @@ const SingleCard = (props) => {
             <img src={img} style={{width:'250px', height:'250px', borderRadius:'50%', margin:'10px'}} alt="/" />
             <div className='p-2'>
                 <h5 className="card-title text-center">{transport}</h5>
-                <Link to={`/destination/${transport}`} className="btn btn-primary w-100">Buy Ticket</Link>
+                <Link to={`/destination/${transport}`} className="btn btn-danger w-100">Buy Ticket</Link>
             </div>
         </div>
     );

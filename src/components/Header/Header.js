@@ -1,18 +1,17 @@
 import React, { useContext } from 'react';
-import { Button, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { Link, NavLink, Route, Router } from 'react-router-dom';
+import {  Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
-import './Header.css'
-import logo from '../../images/logo.jpg'
+import logo from '../../images/logo.ico'
 
 const Header = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const [loggedInUser] = useContext(UserContext)
     return (
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark"  variant="dark" >
                 <Navbar.Brand as={Link} to="/" >
                 <img style={{width:'40px', borderRadius:'40px'}} src={logo} alt=""/>
-                    Town Travel Transport</Navbar.Brand>
+                    &nbsp;<span style={{color:'red', fontWeight:'800'}}>Town Travel Transport</span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav  className="ml-auto" variant="pills" defaultActiveKey="/login">
@@ -29,6 +28,11 @@ const Header = () => {
                         <Nav.Item>
                             <Nav.Link as={Link} to="/contact">
                                 Contact
+                            </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link as={Link} to="/user/profile">
+                                User Profile
                             </Nav.Link>
                         </Nav.Item>
                         <Nav.Item >
