@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../Header/Header';
 import SingleCard from '../SingleCard/SingleCard';
 import './Home.css'
 import fakeData from '../FakeData/FakeData.json'
@@ -11,11 +10,12 @@ const Home = () => {
     }, [])
     return (
         <div className='home'>
-            <Header />
-            <div className='pt-5 mt-5  d-flex justify-content-center flex-wrap'>
-                {
-                    cards.map(card => <SingleCard card={card}></SingleCard>)
-                }
+            <div className="pt-5">
+                <div className='d-flex justify-content-center flex-wrap'>
+                    {
+                        cards.map(card => <SingleCard card={card} key={card.id}></SingleCard>)
+                    }
+                </div>
             </div>
         </div>
     );

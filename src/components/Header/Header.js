@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Link, NavLink, Route, Router } from 'react-router-dom';
 import { UserContext } from '../../App';
 import './Header.css'
 import logo from '../../images/logo.jpg'
@@ -8,26 +8,41 @@ import logo from '../../images/logo.jpg'
 const Header = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     return (
-        <div className='header'>
-            <div>
-                <Link to='/home' className='d-flex justify-content-between align-items-center flex-wrap'>
-                <img style={{width:'90px', borderRadius:'50%'}} src={logo} alt=""/>
-                <h2> Town Travel Transport</h2>
-                </Link>
-            </div>
-            <div className='link'>
-                <Link to="/home">Home</Link>
-                <Link to="/destination/CAR">Destination</Link>
-                <Link to="/contact">Contact</Link>
-                <Link to="/login">
-                    {
-                        loggedInUser.email ? 
-                        <p style={{color:'red'}}><strong>{loggedInUser.displayName}</strong></p> : 
-                        <Button>Log in</Button>
-                    }
-                </Link>
-            </div>
-        </div>
+        <>
+            <Navbar collapseOnSelect expand="lg" bg="dark"  variant="dark" >
+                <Navbar.Brand as={Link} to="/" >
+                <img style={{width:'40px', borderRadius:'40px'}} src={logo} alt=""/>
+                    Town Travel Transport</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav  className="ml-auto" variant="pills" defaultActiveKey="/login">
+                        <Nav.Item href="/">
+                            <Nav.Link as={Link} to="/home">
+                                Home
+                            </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link as={Link} to="/destination/CAR">
+                                Destination
+                            </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link as={Link} to="/contact">
+                                Contact
+                            </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item >
+                            {loggedInUser.email ?
+                                <Nav.Link as={Link} to="/login" style={{color:'red'}}>
+                                {loggedInUser.displayName}  </Nav.Link> :
+                                <Nav.Link as={Link} to="/login" eventKey="/login">
+                                    Log In
+                                </Nav.Link>}
+                        </Nav.Item>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
+        </>
     );
 };
 

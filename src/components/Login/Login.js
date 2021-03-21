@@ -98,47 +98,52 @@ function Login() {
         marginTop: '4px'
     }
 
+
     return (
         <>
-            <Header />
-
-            <div className='m-auto pt-3' >
-                <div style={{ border: '1px solid red', width: '400px', height: '500px', textAlign: 'center', margin: 'auto', marginBottom: '20px' }}>
-                    {
-                        newUser ?
-                            <h3 style={{ paddingTop: '50px' }}>Create an account</h3>
-                            : <h3 style={{ paddingTop: '50px' }}>Login</h3>
-                    }
-                    <div>
-                        <form onSubmit={handleSubmit}>
-                            {
-                                newUser && <input style={inputStyle} name='name' placeholder='Your name' onBlur={handleBlur} type="text" required />
-                            }<br />
-                            <input style={inputStyle} type="text" onBlur={handleBlur} name='email' placeholder='Email' required /> <br />
-                            <input style={inputStyle} type="password" onBlur={handleBlur} name="password" placeholder="Password" required />
-                            <br />
-                            <br />
-                            <input type="submit" style={{ width: '180px' }} className='btn btn-danger' value={newUser ? 'create an account' : 'Login'} />
-                        </form>
-                    </div>
-                    <div style={{ paddingTop: '10px' }}>
+            <div className='pt-5' >
+                <div className='  d-flex justify-content-center align-items-center flex-column'>
+                    <div className='text-center' style={{ boxShadow: "5px 5px 15px  gray", borderRadius: '10px', padding: '75px' }}>
                         {
-                            newUser ? <p> <small>Already has account?<a style={{ cursor: 'pointer', color: 'red' }} onClick={() => setNewUser(!newUser)}> Login</a></small></p> :
+                            newUser ?
+                                <h3 style={{ fontWeight: '700' }}>Create an account</h3>
+                                : <h3 style={{ fontWeight: '700' }}>Login</h3>
+                        }
+                        <div>
+                            <form onSubmit={handleSubmit}>
+                                {
+                                    newUser && <input style={inputStyle} name='name' placeholder='Your name' onBlur={handleBlur} type="text" required />
+                                }<br />
+                                <input style={inputStyle} type="text" onBlur={handleBlur} name='email' placeholder='Email' required /> <br />
+                                <input style={inputStyle} type="password" onBlur={handleBlur} name="password" placeholder="Password" required />
+                                <br />
+                                <br />
+                                <input type="submit" style={{ width: '180px' }} className='btn btn-danger' value={newUser ? 'create an account' : 'Login'} />
+                            </form>
+                        </div>
+                        {
+                            newUser ? <p className='pt-3'> <small>Already has account?</small> <strong><a style={{ cursor: 'pointer', color: 'red' }} onClick={() => setNewUser(!newUser)}> Login</a></strong></p> :
 
-                                <p> <small>Don't have an account?<a style={{ cursor: 'pointer', color: 'red' }} onClick={() => setNewUser(!newUser)}> create an account</a></small></p>
+                                <p className='pt-3'><small> Don't have an account?</small>  <strong><a style={{ cursor: 'pointer', color: 'red' }} onClick={() => setNewUser(!newUser)}> create an account</a></strong></p>
                         }
                     </div>
                 </div>
-                
-                <p> <strong>or</strong> </p>
+
+                <p className='text-center p-4'> <strong>or</strong> </p>
 
 
-                <div className='container d-flex justify-content-between align-items-center flex-wrap'>
-                    <div className='d-flex justify-content-between align-items-center' style={{ border: '1px solid black', padding: '5px 15px', marginTop: '20px', width: '400px', borderRadius: '40px' }} onClick={fbSignIn}>
+                <div className='container d-flex justify-content-center align-items-center flex-column flex-wrap'>
+
+                    <div className='d-flex justify-content-between align-items-center w-50 p-3'
+                        style={{ border: '1px solid black', borderRadius: '40px', cursor: 'pointer' }}
+                        onClick={fbSignIn}>
+
                         <img style={{ width: '50px' }} src={fbIcon} alt="" />
                         <p> <strong>Sign in with facebook</strong> </p>
                     </div>
-                    <div className='d-flex justify-content-between align-items-center' style={{ border: '1px solid black', padding: '5px 15px', marginTop: '20px', width: '400px', borderRadius: '40px' }} onClick={googleSignIn}>
+                    <div className='d-flex justify-content-between align-items-center w-50 p-3 mt-4'
+                        style={{ border: '1px solid black', borderRadius: '40px', cursor: 'pointer' }}
+                        onClick={googleSignIn}>
                         <img style={{ width: '50px' }} src={googleIcon} alt="" />
                         <p> <strong>Sign in with google</strong> </p>
                     </div>

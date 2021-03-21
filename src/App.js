@@ -1,4 +1,3 @@
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './components/Home/Home';
@@ -7,6 +6,7 @@ import Login from './components/Login/Login';
 import Contact from './components/Contact/Contact';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import { createContext, useState } from 'react';
+import Header from './components/Header/Header';
  export const UserContext = createContext();
 
 
@@ -15,6 +15,7 @@ function App() {
   return (
     <UserContext.Provider value={[ loggedUser, setLoggedUser ]}>
     <Router>
+      <Header/>
       <div className="App">
         <Switch>
           <Route exact path='/'>

@@ -27,7 +27,7 @@ export class MapContainer extends Component {
   render() {
     return (
       <div>
-        <Map google={this.props.google}>
+        <Map google={this.props.google} style={{ borderRadius:'10px'}}>
 
           <Marker onClick={this.onMarkerClick}
             name={'Current location'} />
